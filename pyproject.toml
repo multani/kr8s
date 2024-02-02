@@ -17,6 +17,7 @@ dependencies = [
     "anyio>=3.7.0",
     "httpx>=0.24.1",
     "python-box>=7.0.1",
+    "structlog",
 ]
 
 [tool.pytest.ini_options]

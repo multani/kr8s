@@ -557,6 +557,24 @@ class APIObject:
 
 ## v1 objects
 
+class Lease(APIObject):
+    version = "coordination.k8s.io/v1"
+    endpoint = "leases"
+    kind = "Lease"
+    plural = "leases"
+    singular = "lease"
+    namespaced = True
+
+    async def update(self) -> None:
+        async with self.api.call_api(
+            "PUT",
+            version=self.version,
+            url=f"{self.endpoint}/{self.name}",
+            namespace=self.namespace,
+            data=json.dumps(self.raw),
+        ) as resp:
+            self.raw = resp.json()
+
 
 class Binding(APIObject):
     """A Kubernetes Binding."""

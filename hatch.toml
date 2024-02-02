@@ -1,0 +1,2 @@
+[envs.default]
+path = ".venv"

@@ -1,5 +1,7 @@
 from functools import partial
 
+from ._objects import Lease
+
 from ._io import run_sync, sync
 from ._objects import (
     APIObject as _APIObject,
